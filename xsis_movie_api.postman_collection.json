@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "a842e093-958c-4fe1-8099-3b4550f42759",
+		"name": "xsis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "movie-api",
+			"item": [
+				{
+					"name": "insert-data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"title\": \"The Godfather 2\",\n    \"description\": \"A classic mafia movie\",\n    \"rating\": 9.2,\n    \"duration\": 175,\n    \"image\": \"godfather3.jpg\",\n    \"trailerLink\": \"https://www.youtube.com/watch?v=sY1S34973zA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v2/movies/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch-data-movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v2/movies/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-movie-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v2/movies/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-movie-by-id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"title\": \"The Godfather 2 Remake\",\n    \"description\": \"A classic mafia movie\",\n    \"rating\": 9.2,\n    \"duration\": 175,\n    \"image\": \"godfather.jpg\",\n    \"trailerLink\": \"https://www.youtube.com/watch?v=sY1S34973zA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/v2/movies/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-movie-by-id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/v2/movies/20",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"movies",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
