@@ -5,9 +5,11 @@ import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -19,6 +21,7 @@ import java.time.LocalDateTime;
 @Getter
 @ToString
 @EntityListeners(AuditingEntityListener.class)
+@NoArgsConstructor
 public class BaseModel {
 
     @NotNull
@@ -27,8 +30,7 @@ public class BaseModel {
     private String createdBy;
 
     @NotNull
-    @NotEmpty
-    @CreatedBy
+    @CreatedDate
     private LocalDateTime createdAt;
 
     @NotNull
@@ -37,7 +39,6 @@ public class BaseModel {
     private String updatedBy;
 
     @NotNull
-    @NotEmpty
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
